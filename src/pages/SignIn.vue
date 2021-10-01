@@ -6,33 +6,16 @@
       @submit.prevent="onSubmit"
     >
       <div class="header">
-        Sign Up
+        Sign In
       </div>
       <div class="subheader">
-        Create an account to continue
+        Sign in to continue
       </div>
       <div class="form-group">
         <i class="fas fa-at" />
         <input
           v-model="form.user"
           placeholder="Username"
-          required
-        >
-      </div>
-      <div class="form-group">
-        <i class="fas fa-user" />
-        <input
-          v-model="form.name"
-          placeholder="Name"
-          required
-        >
-      </div>
-      <div class="form-group">
-        <i class="fas fa-envelope" />
-        <input
-          v-model="form.email"
-          placeholder="Email"
-          type="email"
           required
         >
       </div>
@@ -48,20 +31,6 @@
           v-if="form.pass.length > 0"
           :class="`${assf.vpass ? 'fas fa-eye-slash': 'fas fa-eye'} cursor-pointer`"
           @click="assf.vpass = !assf.vpass"
-        />
-      </div>
-      <div class="form-group">
-        <i class="fas fa-lock" />
-        <input
-          v-model="assf.cpass"
-          placeholder="Confirm Password"
-          :type="assf.vcpass ? 'text': 'password'"
-          required
-        >
-        <i
-          v-if="assf.cpass.length > 0"
-          :class="`${assf.vcpass ? 'fas fa-eye-slash': 'fas fa-eye'} cursor-pointer`"
-          @click="assf.vcpass = !assf.vcpass"
         />
       </div>
       <button type="submit">
@@ -81,13 +50,13 @@
       </p>
       <hr>
       <p>
-        <b>Already have an account?</b>
+        <b>Do not have an account?</b>
       </p>
       <button
         type="button"
-        @click="$router.push('/sign-in')"
+        @click="$router.push('/sign-up')"
       >
-        Sign in
+        Create Account
       </button>
     </div>
   </div>

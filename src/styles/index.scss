@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   * {
     -webkit-user-select: none;
@@ -43,5 +42,98 @@
     h1, h2, h3, h4, h5 ,h6 {
       @apply font-bold;
     }
+  }
+  .sign-form {
+    @apply flex flex-col items-center;
+    color: white;
+  
+    .container {
+      @apply flex flex-col items-center my-5;
+      width: 90%;
+      max-width: 400px;
+  
+      .header {
+        @apply text-4xl font-bold mb-2;
+      }
+      .subheader {
+        @apply text-base font-thin mb-8;
+      }
+  
+      .form-group {
+        @apply flex flex-row justify-center items-center px-2 py-3 rounded-lg mb-4;
+        background: white;
+        width: 100%;
+        i {
+          @apply mx-4 my-0 py-0 text-base;
+          color: $violet;
+        }
+        input {
+          @apply p-0 font-bold;
+          flex: 1;
+          outline: none;
+          background: inherit;
+          color: $violet;
+          &::placeholder {
+            @apply text-gray-700;
+          }
+        }
+        &:focus-within {
+          background: $violet-lighter;
+        }
+      }
+  
+      [type=submit], [type=button] {
+        @apply py-3 px-5 my-4 rounded-lg font-bold transition-all duration-100;
+        background: $bg-gradient-yellowred;
+        color: white;
+        text-shadow: 0px 0px 20px $red;
+        width: 100%;
+  
+        &:active {
+          box-shadow: 0px 0px 10px $red;
+          text-shadow: 0px 0px 20px $violet;
+        }
+      }
+      [type=button] {
+        @apply px-12 mt-8;
+        width: auto;
+      }
+      .vendor-facebook {
+        @apply mt-4 w-full
+      }
+      .vendor-google {
+        @apply bg-white flex flex-row items-center justify-center px-4 py-2 rounded-sm mt-4 transition-all duration-100;
+        width: 100%;
+  
+        &:active {
+          box-shadow: 0px 0px 10px $red;
+        }
+  
+        i, img {
+          @apply mr-4;
+          width: 1rem;
+          height: 1 rem;
+        }
+        span {
+          @apply font-bold text-gray-500;
+          flex: 1;
+          // color: $violet;
+        }
+      }
+      p {
+        @apply text-center text-sm transition-all duration-300;
+        a {
+          color: $violet-lighter;
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+      hr {
+        @apply w-full my-7;
+        border-color: $violet-dark;
+      }
+    }
+  
   }
 }
