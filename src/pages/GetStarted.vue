@@ -71,7 +71,7 @@ export default defineComponent({
 @import "../styles/variables";
 .page-get-started {
   @apply p-2 flex flex-col justify-center items-center;
-  color: $light;
+  color: white;
   height: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -96,7 +96,7 @@ export default defineComponent({
       @apply mx-1 cursor-pointer;
       border-radius: 50%;
       &:hover {
-        box-shadow: 0 0 5px $orange;
+        box-shadow: 0 0 5px $red;
       }
       &.active {
         color: $yellow;
@@ -105,13 +105,13 @@ export default defineComponent({
   }
   button {
     @apply py-3 px-5 m-8 rounded-lg font-bold transition-all duration-100 ;
-    background: $bg-gradient-yelloworange;
+    background: $bg-gradient-yellowred;
     color: white;
-    text-shadow: 0px 0px 20px $orange;
+    text-shadow: 0px 0px 20px $red;
     width: 80%;
 
     &:active {
-      box-shadow: 0px 0px 10px $orange;
+      box-shadow: 0px 0px 10px $red;
       text-shadow: 0px 0px 20px $violet;
     }
   }

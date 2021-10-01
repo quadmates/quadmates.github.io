@@ -45,14 +45,14 @@ export default defineComponent({
     @apply flex flex-row items-center justify-between;
     width: 100%;
     max-width: 780px;
-    color: $light;
+    color: white;
 
     .back-button {
       @apply p-4 mx-2 rounded-full transition-all duration-200 ease-in-out cursor-pointer;
-      color: $light;
+      color: white;
       &:hover {
         color: $yellow;
-        text-shadow: 0 0 5px $orange;
+        text-shadow: 0 0 5px $red;
       }
     }
     .header {

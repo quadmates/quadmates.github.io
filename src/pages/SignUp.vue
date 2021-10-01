@@ -67,25 +67,18 @@
       <button type="submit">
         Next
       </button>
-      <div
-        class="fb-login-button vendor-facebook"
-        data-width="100%"
-        data-size="large"
-        data-button-type="continue_with"
-        data-layout="default"
-        data-auto-logout-link="false"
-        data-use-continue-as="false"
-      />
-      <button
-        class="vendor-google"
-        type="button"
-      >
-        <img
-          src="/assets/g-logo.png"
-          alt="Google Logo"
-        ><span>Sign up with Google</span>
-      </button>
     </form>
+    <div class="container">
+      <p>
+        By creating an account you agree to our
+        <router-link to="/tos">
+          Terms of Service
+        </router-link>
+        and
+        <a href="#">Privacy Policy</a>
+      </p>
+      Already have an account?
+    </div>
   </div>
 </template>
 <script>
@@ -97,17 +90,17 @@ export default defineComponent({
       email: '',
       pass: '',
       data: {
-        google: '',
-        facebook: '',
+        google: '', // google account user_id
+        facebook: '', // facebook account user_id
         gender: '',
         birthday: '',
         position: ''
       }
     })
     const assf = ref({
-      cpass: '',
-      vpass: false,
-      vcpass: false
+      cpass: '', // confirm password field
+      vpass: false, // view password field
+      vcpass: false // view confirm password field
     })
     return { form, assf }
   }
@@ -117,7 +110,7 @@ export default defineComponent({
 @import "../styles/variables";
 .sign-up {
   @apply flex flex-col items-center;
-  color: $light;
+  color: white;
 
   .container {
     @apply flex flex-col items-center mt-5 mb-12;
@@ -133,7 +126,7 @@ export default defineComponent({
 
     .form-group {
       @apply flex flex-row justify-center items-center px-2 py-3 rounded-lg mb-4;
-      background: $light;
+      background: white;
       width: 100%;
       i {
         @apply mx-4 my-0 py-0 text-base;
@@ -150,15 +143,15 @@ export default defineComponent({
         }
       }
       &:focus-within {
-        background: $lighter;
+        background: $violet-lighter;
       }
     }
 
     [type=submit] {
       @apply py-3 px-5 my-4 rounded-lg font-bold transition-all duration-100;
-      background: $bg-gradient-yelloworange;
+      background: $bg-gradient-yellowred;
       color: white;
-      text-shadow: 0px 0px 20px $orange;
+      text-shadow: 0px 0px 20px $red;
       width: 100%;
 
       &:active {

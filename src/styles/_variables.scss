@@ -1,8 +1,11 @@
-$orange: #f46131ff;
-$yellow: #e7e516ff;
+$violet-darker: #0F0844;
+$violet-dark: #5D5885;
 $violet: #281883;
-$lightviolet: #5c44e0;
-$light: #d6ceff;
-$lighter: #bcaefdfd;
-$bg-gradient-yelloworange: linear-gradient(to bottom, $yellow 0%, #f46131ff 100%);
-$bg-gradient-orangeyellow: linear-gradient(to top, #e7e516ff 0%, #f46131ff 100%);
+$violet-light: #7180FF;
+$violet-lighter: #C0C7FF;
+$red: #FF6258;
+$yellow: #F9BA50;
+$green: #2BD8A3;
+$pink: #F30261;
+$bg-gradient-yellowred: linear-gradient(to bottom, $yellow 0%, $red 100%);
+$bg-gradient-redyellow: linear-gradient(to top, $yellow 0%, $red 100%);
