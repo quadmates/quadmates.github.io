@@ -39,18 +39,23 @@ export default defineComponent({
     const current = ref(0)
     const pages = ref([
       {
-        image: '/assets/logo.png',
+        image: '/assets/ob-1.svg',
         title: 'Study',
         description: 'This is a dummy Text Haha Hello'
       },
       {
-        image: '/assets/logo.png',
+        image: '/assets/ob-2.svg',
         title: 'Discuss',
         description: 'This is another dumb dummy peace yow'
       },
       {
-        image: '/assets/logo.png',
+        image: '/assets/ob-3.svg',
         title: 'Play',
+        description: 'This is a dummy Text you dummy, I am yandere'
+      },
+      {
+        image: '/assets/logo.png',
+        title: 'Ready?',
         description: 'This is a dummy Text you dummy, I am yandere'
       }
     ])
@@ -82,7 +87,7 @@ export default defineComponent({
   }
   img {
     @apply pt-8 pb-8;
-    width: 80%;
+    width: 70%;
   }
   h1 {
     @apply font-bold text-5xl pb-1 pt-8;

@@ -31,7 +31,7 @@
 <script>
 import { defineComponent, ref } from 'vue'
 export default defineComponent({
-  name: 'SignUpPosition',
+  name: 'SignUpGender',
   setup () {
     const genders = ref([
       'Male',
