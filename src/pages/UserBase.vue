@@ -2,33 +2,33 @@
   <router-view />
   <div class="footer-controller">
     <div class="container">
-      <router-link to="/home">
-        <i class="fas fa-home" />
-        <span>Home</span>
-      </router-link>
-
-      <router-link to="/home">
-        <i class="fas fa-home" />
-        <span>Home</span>
-      </router-link>
-
-      <router-link to="/home">
-        <i class="fas fa-home" />
-        <span>Home</span>
-      </router-link>
-
-      <router-link to="/home">
-        <i class="fas fa-home" />
-        <span>Home</span>
-      </router-link>
-
-      <router-link to="/home">
-        <i class="fas fa-home" />
-        <span>Home</span>
+      <router-link
+        v-for="nav in navs"
+        :key="nav.title"
+        :to="nav.to"
+      >
+        <i :class="nav.icon" />
+        <span>{{ nav.title }}</span>
       </router-link>
     </div>
   </div>
 </template>
+<script>
+import { defineComponent, ref } from 'vue'
+
+export default defineComponent({
+  setup () {
+    const navs = ref([
+      { icon: 'fas fa-home', title: 'Home', to: '/dashboard' },
+      { icon: 'fas fa-calendar-alt', title: 'Calendar', to: '/calendar' },
+      { icon: 'fas fa-compass', title: 'Campus', to: '/campus' },
+      { icon: 'fas fa-comment-dots', title: 'Inbox', to: '/inbox' },
+      { icon: 'fas fa-user', title: 'Profile', to: '/profile' }
+    ])
+    return { navs }
+  }
+})
+</script>
 <style lang="scss">
 @import "../styles/variables";
 .footer-controller {

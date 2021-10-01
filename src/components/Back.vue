@@ -1,21 +1,23 @@
 <template>
   <teleport to="#header">
-    <div class="container">
-      <slot name="left">
-        <i
-          class="fas fa-arrow-left back-button"
-          @click="$emit('back')"
-        />
-      </slot>
-      <slot name="center">
-        <h3 class="header">
-          {{ header }}
-        </h3>
-      </slot>
-      <slot name="right">
-        <i class="fas fa-arrow-left back-button-spacer" />
-      </slot>
-    </div>
+    <slot>
+      <div class="container">
+        <slot name="left">
+          <i
+            class="fas fa-arrow-left back-button"
+            @click="$emit('back')"
+          />
+        </slot>
+        <slot name="center">
+          <h3 class="header">
+            {{ header }}
+          </h3>
+        </slot>
+        <slot name="right">
+          <i class="fas fa-arrow-left back-button-spacer" />
+        </slot>
+      </div>
+    </slot>
   </teleport>
 </template>
 <script>

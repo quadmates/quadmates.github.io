@@ -10,6 +10,8 @@ import Tos from '../pages/Tos.vue'
 import Privacy from '../pages/Privacy.vue'
 import UserBase from '../pages/UserBase.vue'
 import Dashboard from '../pages/Dashboard.vue'
+import Campus from '../pages/Campus.vue'
+import Feed from '../pages/Feed.vue'
 const routes = [
   { path: '/', component: GetStarted },
   { path: '/sign-up', component: SignUp },
@@ -30,6 +32,40 @@ const routes = [
       {
         path: '/home',
         component: Dashboard
+      },
+      {
+        path: '/calendar',
+        component: Dashboard
+      },
+      {
+        path: '/inbox',
+        component: Dashboard
+      },
+      {
+        path: '/profile',
+        component: Dashboard
+      },
+      {
+        path: '/campus',
+        component: Campus,
+        children: [
+          {
+            path: '',
+            component: Feed
+          }, {
+            path: 'focus',
+            component: Feed
+          }, {
+            path: 'discuss',
+            component: Feed
+          }, {
+            path: 'play',
+            component: Feed
+          }, {
+            path: 'peers',
+            component: Feed
+          }
+        ]
       }
     ]
   }
