@@ -8,7 +8,8 @@ import SignUpCampus from '../pages/SignUpCampus.vue'
 import SignIn from '../pages/SignIn.vue'
 import Tos from '../pages/Tos.vue'
 import Privacy from '../pages/Privacy.vue'
-
+import UserBase from '../pages/UserBase.vue'
+import Dashboard from '../pages/Dashboard.vue'
 const routes = [
   { path: '/', component: GetStarted },
   { path: '/sign-up', component: SignUp },
@@ -17,7 +18,21 @@ const routes = [
   { path: '/sign-up/campus', component: SignUpCampus },
   { path: '/sign-in', component: SignIn },
   { path: '/tos', component: Tos },
-  { path: '/privacy', component: Privacy }
+  { path: '/privacy', component: Privacy },
+  {
+    path: '/dashboard',
+    component: UserBase,
+    children: [
+      {
+        path: '',
+        component: Dashboard
+      },
+      {
+        path: '/home',
+        component: Dashboard
+      }
+    ]
+  }
 ]
 
 const router = createRouter({
