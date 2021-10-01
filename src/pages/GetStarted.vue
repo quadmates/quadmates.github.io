@@ -71,7 +71,7 @@ export default defineComponent({
 @import "../styles/variables";
 .page-get-started {
   @apply p-2 flex flex-col justify-center items-center;
-  color: white;
+  color: $violet-darker;
   height: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -91,29 +91,25 @@ export default defineComponent({
     @apply font-thin text-base pb-4;
   }
   .dots {
-    @apply flex justify-center items-center pt-2;
+    @apply flex justify-center items-center pt-2 transition-all duration-300;
     i {
       @apply mx-1 cursor-pointer;
       border-radius: 50%;
+      color: $violet-lighter;
       &:hover {
-        box-shadow: 0 0 5px $red;
+        color: $violet-dark;
       }
       &.active {
-        color: $yellow;
+        color: $violet-darker;
       }
     }
   }
   button {
-    @apply py-3 px-5 m-8 rounded-lg font-bold transition-all duration-100 ;
-    background: $bg-gradient-yellowred;
+    @apply py-3 px-5 m-8 rounded-lg font-bold ;
+    background: $pink;
     color: white;
-    text-shadow: 0px 0px 20px $red;
     width: 80%;
-
-    &:active {
-      box-shadow: 0px 0px 10px $red;
-      text-shadow: 0px 0px 20px $violet;
-    }
+    box-shadow: 0 5px 15px #aaaaaa;
   }
 }
 </style>

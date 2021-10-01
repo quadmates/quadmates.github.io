@@ -12,14 +12,6 @@
         Create an account to continue
       </div>
       <div class="form-group">
-        <i class="fas fa-at" />
-        <input
-          v-model="form.user"
-          placeholder="Username"
-          required
-        >
-      </div>
-      <div class="form-group">
         <i class="fas fa-user" />
         <input
           v-model="form.name"
@@ -65,20 +57,10 @@
         />
       </div>
       <button type="submit">
-        Submit
+        Sign Up <i class="fas fa-arrow-right ml-2" />
       </button>
     </form>
     <div class="container">
-      <p>
-        By using our service you agree to our
-        <router-link to="/tos">
-          Terms of Service
-        </router-link>
-        and
-        <router-link to="/privacy">
-          Privacy Policy
-        </router-link>
-      </p>
       <hr>
       <p>
         <b>Already have an account?</b>

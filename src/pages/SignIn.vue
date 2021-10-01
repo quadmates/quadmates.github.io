@@ -38,16 +38,6 @@
       </button>
     </form>
     <div class="container">
-      <p>
-        By using our service you agree to our
-        <router-link to="/tos">
-          Terms of Service
-        </router-link>
-        and
-        <router-link to="/privacy">
-          Privacy Policy
-        </router-link>
-      </p>
       <hr>
       <p>
         <b>Do not have an account?</b>
