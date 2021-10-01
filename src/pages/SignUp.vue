@@ -155,7 +155,7 @@ export default defineComponent({
       width: 100%;
 
       &:active {
-        box-shadow: 0px 0px 10px $orange;
+        box-shadow: 0px 0px 10px $red;
         text-shadow: 0px 0px 20px $violet;
       }
     }
@@ -167,7 +167,7 @@ export default defineComponent({
       width: 100%;
 
       &:active {
-        box-shadow: 0px 0px 10px $orange;
+        box-shadow: 0px 0px 10px $red;
       }
 
       i, img {
