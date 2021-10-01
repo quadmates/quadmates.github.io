@@ -96,6 +96,11 @@ export default defineComponent({
       vcpass: false // view confirm password field
     })
     return { form, assf }
+  },
+  methods: {
+    onSubmit () {
+      this.$router.push('/sign-up/position')
+    }
   }
 })
 </script>

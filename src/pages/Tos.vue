@@ -12,11 +12,3 @@
     </p>
   </div>
 </template>
-<script>
-import Back from '../components/Back.vue'
-export default {
-  components: {
-    Back
-  }
-}
-</script>
