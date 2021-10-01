@@ -1,0 +1,16 @@
+{
+  "name": "tmp",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --port=4000 --host",
+    "build": "vite build --outDir docs",
+    "start": "vite preview --port=5000 --host"
+  },
+  "dependencies": {
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.2",
+    "vite": "^2.6.0"
+  }
+}
