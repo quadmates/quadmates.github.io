@@ -42,7 +42,7 @@ export default defineComponent({
       { tag: '#Arts', icon: 'fas fa-palette', keys: ['art', 'arts'] },
       { tag: '#Agri', icon: 'fas fa-handshake', keys: ['agri', 'agriculture', 'land'] },
       { tag: '#Scie', icon: 'fas fa-flask', keys: ['sci', 'science'] },
-      { tag: '#Engr', icon: 'fas fa-jenkins', keys: ['engr', 'engineer'] },
+      { tag: '#Engr', icon: 'fas fa-book-dead', keys: ['engr', 'engineer'] },
       { tag: '#Psyc', icon: 'fas fa-shapes', keys: ['psy', 'psychology'] },
       { tag: '#Law', icon: 'fas fa-gavel', keys: ['law'] },
       { tag: '#Educ', icon: 'fas fa-school', keys: ['educ', 'education'] },
