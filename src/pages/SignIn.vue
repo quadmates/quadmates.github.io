@@ -12,11 +12,12 @@
         Sign in to continue
       </div>
       <div class="form-group">
-        <i class="fas fa-at" />
+        <i class="fas fa-envelope" />
         <input
-          v-model="form.user"
-          placeholder="Username"
+          v-model="form.email"
+          placeholder="Email"
           required
+          type="email"
         >
       </div>
       <div class="form-group">
