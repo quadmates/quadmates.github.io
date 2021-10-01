@@ -21,7 +21,7 @@
       </div>
       <button
         class="next"
-        @click="$router.push('/dashboard')"
+        @click="$router.push('/sign-up/campus')"
       >
         Next
       </button>
