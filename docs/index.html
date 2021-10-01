@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/assets/index.16c8f085.js"></script>
-    <link rel="modulepreload" href="/assets/vendor.0a4c09b3.js">
-    <link rel="stylesheet" href="/assets/index.16c4fe9c.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quadrangle</title>
+  <script type="module" crossorigin src="/assets/index.9ba473f8.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.d8ff40cb.js">
+  <link rel="stylesheet" href="/assets/index.64220fd7.css">
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="app">
+    <style>
+      html,
+      body,
+      #app {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        width: 100vw;
+        height: 100vh;
+        max-width: 100vw;
+        max-height: 100vh;
+        background: #281883;
+      }
+
+      .splash-screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .splash-screen .logo {
+        width: 25%;
+        max-width: 100px;
+        height: auto;
+      }
+    </style>
+    <div class="splash-screen">
+      <img class="logo" src="/assets/logo.png" alt="logo" draggable="false" />
+    </div>
+  </div>
+  <div id="footer"></div>
+  
+</body>
+
 </html>

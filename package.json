@@ -7,10 +7,26 @@
     "start": "vite preview --port=5000 --host"
   },
   "dependencies": {
-    "vue": "^3.2.16"
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.11",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^1.9.2",
-    "vite": "^2.6.0"
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@vitejs/plugin-vue": "^1.9.0",
+    "autoprefixer": "^10.3.5",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-vue": "^7.18.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.7",
+    "postcss-import": "^14.0.2",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "tailwindcss": "^2.2.15",
+    "vite": "^2.5.10"
   }
 }
