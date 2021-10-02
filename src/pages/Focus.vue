@@ -14,6 +14,12 @@
         <i class="fas fa-pause" />
         <i class="fas fa-stop" />
       </div>
+      <button
+        class="enter-stream"
+        @click="$router.push('/focus-room/1')"
+      >
+        Enter Stream
+      </button>
     </div>
   </div>
 </template>
@@ -67,9 +73,13 @@ export default defineComponent({
       @apply flex mx-auto justify-center py-8;
 
       i {
-        @apply text-4xl p-5 mx-2 bg-green-100 rounded-full hover:bg-green-200 cursor-pointer;
+        @apply text-4xl p-5 mx-2 bg-green-100 rounded-full hover:bg-green-200 cursor-pointer shadow-lg;
         color: green;
       }
+    }
+    .enter-stream {
+      @apply bg-green-300 text-white mt-12 py-4 px-12 text-blue-900 rounded-lg font-bold hover:bg-green-400 shadow-lg;
+
     }
   }
 }

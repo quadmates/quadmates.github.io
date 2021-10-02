@@ -13,6 +13,7 @@ import Dashboard from '../pages/Dashboard.vue'
 import Campus from '../pages/Campus.vue'
 import Feed from '../pages/Feed.vue'
 import Focus from '../pages/Focus.vue'
+import FocusRoom from '../pages/FocusRoom.vue'
 const routes = [
   { path: '/', component: GetStarted },
   { path: '/sign-up', component: SignUp },
@@ -22,6 +23,7 @@ const routes = [
   { path: '/sign-in', component: SignIn },
   { path: '/tos', component: Tos },
   { path: '/privacy', component: Privacy },
+  { path: '/focus-room/:id', component: FocusRoom },
   {
     path: '/dashboard',
     component: UserBase,
