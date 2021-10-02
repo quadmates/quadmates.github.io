@@ -12,6 +12,7 @@ import UserBase from '../pages/UserBase.vue'
 import Dashboard from '../pages/Dashboard.vue'
 import Campus from '../pages/Campus.vue'
 import Feed from '../pages/Feed.vue'
+import Focus from '../pages/Focus.vue'
 const routes = [
   { path: '/', component: GetStarted },
   { path: '/sign-up', component: SignUp },
@@ -54,7 +55,7 @@ const routes = [
             component: Feed
           }, {
             path: 'focus',
-            component: Feed
+            component: Focus
           }, {
             path: 'discuss',
             component: Feed
