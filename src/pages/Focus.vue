@@ -1,24 +1,54 @@
 <template>
   <div class="campus-focus">
     <div class="container">
-      <circle-progress :percent="40" />
-      <h1>Focus</h1>
+      <h1>{{ remaining }}</h1>
+      <h3>study time remaining</h3>
     </div>
   </div>
 </template>
 <script>
-import 'vue3-circle-progress/dist/circle-progress.css'
-import CircleProgress from 'vue3-circle-progress'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  components: {
-    CircleProgress
+  filters: {
+    format (val) {
+      const minutes = Math.floor(val / 60)
+      const seconds = Math.floor(val % 60)
+      return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+    }
   },
   setup () {
     const percent = ref(0)
+    const remaining = ref('')
+    const timer = ref(25 * 60 * 1000)
+    const start = ref(Date.now())
+    const end = ref(start.value + timer.value)
     return {
-      percent
+      start,
+      end,
+      timer,
+      percent,
+      remaining
+    }
+  },
+  watch: {
+    percent (val) {
+      if (val <= 0) {
+        this.remaining.value = '0:00'
+      }
+    }
+  },
+  created () {
+    this.update()
+    setInterval(this.update, 1000)
+  },
+  methods: {
+    update () {
+      const now = Date.now()
+      const remaining = this.end.value - now
+      const percent = Math.round(remaining / this.timer.value * 100)
+      this.remaining.value = this.format(remaining)
+      this.percent.value = percent
     }
   }
 })
