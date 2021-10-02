@@ -91,7 +91,7 @@ export default defineComponent({
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: $pink;
+        background: $violet-darker;
         overflow: hidden;
       }
       .header {
