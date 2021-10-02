@@ -58,13 +58,13 @@ const routes = [
             component: Focus
           }, {
             path: 'discuss',
-            component: Feed
+            component: Dashboard
           }, {
             path: 'play',
-            component: Feed
+            component: Dashboard
           }, {
             path: 'peers',
-            component: Feed
+            component: Dashboard
           }
         ]
       }
