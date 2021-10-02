@@ -1,13 +1,19 @@
 <template>
   <Back header="Focus Room" />
   <div class="focus-room">
-    <h1>Room</h1>
-    <button @click="join">
+    <button
+      class="join"
+      @click="join"
+    >
       join
     </button>
-    <button @click="leave">
+    <button
+      class="leave"
+      @click="leave"
+    >
       leave
     </button>
+    <div id="videos" />
   </div>
 </template>
 <script>
@@ -32,7 +38,7 @@ export default defineComponent({
       channel: '1',
       // Set the user ID.
       token: '006421dd2b0d87a46b1ba70f7d4e72353cdIADhSrND4FxWSOinG98+Qmn0aBvuqxxWKZVCyZUTY5uCw7fv3IMAAAAAEADSvifOKCdZYQEAAQAkJ1lh',
-      uid: 1
+      uid: getRandomInt(100000, 999999)
     })
     rtc.value.client.on('user-published', async (user, mediaType) => {
       await this.rtc.client.subscribe(user, mediaType)
@@ -42,8 +48,8 @@ export default defineComponent({
         const remotePlayerContainer = document.createElement('div')
         remotePlayerContainer.id = user.uid.toString()
         remotePlayerContainer.textContent = 'Remote user ' + user.uid.toString()
-        remotePlayerContainer.style.width = '640px'
-        remotePlayerContainer.style.height = '480px'
+        remotePlayerContainer.style.width = '500px'
+        remotePlayerContainer.style.height = '300px'
         document.body.append(remotePlayerContainer)
         remoteVideoTrack.play(remotePlayerContainer)
       }
@@ -64,20 +70,14 @@ export default defineComponent({
   methods: {
     async join () {
       await this.rtc.client.join(this.options.appId, this.options.channel, this.options.token, this.options.uid)
-      // Create a local audio track from the audio sampled by a microphone.
       this.rtc.localAudioTrack = await window.AgoraRTC.createMicrophoneAudioTrack()
-      // Create a local video track from the video captured by a camera.
       this.rtc.localVideoTrack = await window.AgoraRTC.createCameraVideoTrack()
-      // Publish the local audio and video tracks to the RTC channel.
       await this.rtc.client.publish([this.rtc.localAudioTrack, this.rtc.localVideoTrack])
-      // Dynamically create a container in the form of a DIV element for playing the local video track.
       const localPlayerContainer = document.createElement('div')
-      // Specify the ID of the DIV container. You can use the uid of the local user.
       localPlayerContainer.id = this.options.uid
-      localPlayerContainer.textContent = 'Local user ' + this.options.uid
       localPlayerContainer.style.width = '640px'
       localPlayerContainer.style.height = '480px'
-      document.body.append(localPlayerContainer)
+      document.getElementById('videos').append(localPlayerContainer)
 
       this.rtc.localVideoTrack.play(localPlayerContainer)
       console.log('publish success!')
@@ -95,5 +95,18 @@ export default defineComponent({
     }
   }
 })
-
 </script>
+<style lang="scss">
+.join, .leave {
+  @apply my-8 py-3 px-5 rounded-lg bg-gray-200 mx-2 font-bold text-sm capitalize shadow-lg;
+
+  .videos {
+    @apply mx-auto flex flex-wrap justify-center;
+    max-width: 600px;
+
+    video {
+      @apply rounded-lg;
+    }
+  }
+}
+</style>
