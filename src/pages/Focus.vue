@@ -1,8 +1,19 @@
 <template>
   <div class="campus-focus">
     <div class="container">
-      <h1>{{ remaining }}</h1>
+      <h1>23:55</h1>
       <h3>study time remaining</h3>
+      <div class="progress-bar">
+        <div
+          class="track"
+          style="width: 70%;"
+        />
+      </div>
+      <div class="controls">
+        <i class="fas fa-redo" />
+        <i class="fas fa-pause" />
+        <i class="fas fa-stop" />
+      </div>
     </div>
   </div>
 </template>
@@ -10,13 +21,7 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
-  filters: {
-    format (val) {
-      const minutes = Math.floor(val / 60)
-      const seconds = Math.floor(val % 60)
-      return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
-    }
-  },
+
   setup () {
     const percent = ref(0)
     const remaining = ref('')
@@ -30,26 +35,6 @@ export default defineComponent({
       percent,
       remaining
     }
-  },
-  watch: {
-    percent (val) {
-      if (val <= 0) {
-        this.remaining.value = '0:00'
-      }
-    }
-  },
-  created () {
-    this.update()
-    setInterval(this.update, 1000)
-  },
-  methods: {
-    update () {
-      const now = Date.now()
-      const remaining = this.end.value - now
-      const percent = Math.round(remaining / this.timer.value * 100)
-      this.remaining.value = this.format(remaining)
-      this.percent.value = percent
-    }
   }
 })
 
@@ -59,11 +44,33 @@ export default defineComponent({
 
 .campus-focus {
   @apply flex flex-col items-center justify-center px-4 pt-5;
-
+  color: $violet-darker;
   .container {
-    @apply bg-white p-4 rounded-lg;
+    @apply bg-white py-8 rounded-lg;
     max-width: 600px;
     box-shadow: 1px 1px 15px #ccc;
+
+    h1 {
+      @apply text-5xl font-bold;
+    }
+    h3 {
+      @apply text-xl font-bold;
+    }
+    .progress-bar {
+      @apply bg-gray-200 rounded-lg mx-auto mt-12;
+      width: 50%;
+      .track {
+        @apply bg-green-800 h-2 rounded-lg;
+      }
+    }
+    .controls {
+      @apply flex mx-auto justify-center py-8;
+
+      i {
+        @apply text-4xl p-5 mx-2 bg-green-100 rounded-full hover:bg-green-200 cursor-pointer;
+        color: green;
+      }
+    }
   }
 }
 </stype>
